@@ -1,0 +1,210 @@
+/* ===========================================================
+   ✨ NEON GLASS FINTECH - CREDIT DEFAULT (ANN) ✨
+   Untuk: TA-11 Prediksi Gagal Bayar Kartu Kredit
+=========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --cyan: #00e5ff;
+  --violet: #b100ff;
+  --pink: #ff2d95;
+
+  --bg0: #070814;
+  --glass: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.72);
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.45);
+  --radius: 22px;
+}
+
+/* ===== Base ===== */
+body{
+  font-family: "Poppins", sans-serif;
+  background: var(--bg0);
+  color: var(--text);
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 70px;
+}
+
+/* Background neon */
+body::before{
+  content:"";
+  position: fixed;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,229,255,0.55), transparent 45%),
+    radial-gradient(circle at 80% 25%, rgba(177,0,255,0.55), transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(255,45,149,0.50), transparent 50%);
+  filter: blur(70px);
+  opacity: 0.95;
+  z-index: -1;
+  animation: floatBg 18s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg{
+  0%   { transform: translate3d(-10px, -10px, 0) scale(1.02); }
+  100% { transform: translate3d(10px, 12px, 0) scale(1.06); }
+}
+
+/* ===== Title Button ===== */
+.title-button{
+  font-size: 1.65rem;
+  padding: 16px 50px;
+  border-radius: 60px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-title-neon{
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+  background-size: 200% 200%;
+  color: #fff;
+  border: none;
+  box-shadow:
+    0 0 10px rgba(0,229,255,0.6),
+    0 0 20px rgba(177,0,255,0.45),
+    0 0 35px rgba(255,45,149,0.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: titleGlow 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow{
+  from { transform: translateY(0) scale(1); }
+  to   { transform: translateY(-2px) scale(1.03); }
+}
+
+.btn-title-neon:hover{
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 0 16px rgba(0,229,255,0.75),
+    0 0 28px rgba(177,0,255,0.60),
+    0 0 44px rgba(255,45,149,0.55);
+}
+
+/* ===== Card Glass ===== */
+.card{
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  animation: fadeUp .9s ease;
+}
+
+@keyframes fadeUp{
+  from{ opacity: 0; transform: translateY(20px); }
+  to  { opacity: 1; transform: translateY(0); }
+}
+
+.text-secondary{
+  color: var(--muted) !important;
+}
+
+/* ===== Inputs ===== */
+.form-label{
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.form-control, .form-select{
+  background: rgba(255,255,255,0.92) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  border-radius: 14px !important;
+  color: #111 !important;
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.form-control:focus, .form-select:focus{
+  border-color: rgba(0,229,255,0.7) !important;
+  box-shadow: 0 0 0 .18rem rgba(0,229,255,0.20) !important;
+  transform: translateY(-1px);
+}
+
+h6.text-info{
+  color: rgba(0,229,255,0.95) !important;
+  font-weight: 800;
+  letter-spacing: .6px;
+  margin-bottom: 6px;
+}
+
+/* ===== Primary Button ===== */
+.btn-primary{
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 12px 26px !important;
+  font-weight: 800 !important;
+  letter-spacing: .4px;
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink)) !important;
+  background-size: 200% 100% !important;
+  box-shadow: 0 0 18px rgba(177,0,255,0.35);
+  transition: transform .2s ease, box-shadow .25s ease;
+  animation: btnFloat 3.1s ease-in-out infinite;
+}
+
+@keyframes btnFloat{
+  0%,100%{ transform: translateY(0); }
+  50%    { transform: translateY(-4px); }
+}
+
+.btn-primary:hover{
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 0 24px rgba(0,229,255,0.35), 0 0 35px rgba(255,45,149,0.25);
+}
+
+/* ===== Alerts (result) ===== */
+.alert{
+  border: none !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 18px rgba(255,255,255,0.12);
+}
+
+.alert-danger{
+  background: linear-gradient(90deg, rgba(255,45,149,0.95), rgba(177,0,255,0.85)) !important;
+  color: #fff !important;
+}
+
+.alert-success{
+  background: linear-gradient(90deg, rgba(0,229,255,0.9), rgba(54,255,175,0.75)) !important;
+  color: #041015 !important;
+  font-weight: 900;
+}
+
+/* ===== Progress ===== */
+.progress{
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.18) !important;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.35);
+}
+
+.progress-bar{
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+/* ===== Small panel ===== */
+.bg-dark{
+  background: rgba(0,0,0,0.28) !important;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ===== Footer ===== */
+footer, .container .text-center.text-secondary{
+  color: rgba(255,255,255,0.70) !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.10);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 576px){
+  .title-button{
+    font-size: 1.1rem;
+    padding: 14px 18px;
+  }
+}
