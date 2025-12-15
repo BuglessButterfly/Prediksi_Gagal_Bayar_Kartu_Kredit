@@ -1,50 +1,60 @@
-# --- Python ---
+# ---- Python ----
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-dist/
-build/
-.eggs/
-.pytest_cache/
-.mypy_cache/
-.cache/
-.ipynb_checkpoints/
-
-# --- Virtualenv ---
-venv/
+*$py.class
 .venv/
+venv/
 ENV/
 env/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+build/
+dist/
+*.log
 
-# --- OS / Editor ---
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*.ipynb~
+
+
+# ---- OS / Editor ----
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-# --- Logs ---
-*.log
+# ---- Testing / tooling ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# --- Secrets / env ---
+# ---- Local secrets / env ----
 .env
 .env.*
-!.env.example
+!env.example
 
-# --- Vercel ---
-.vercel/
+# ---- Flask ----
+instance/
+*.sqlite3
 
-# --- Data & Models ---
-# JANGAN di-ignore kalau dipakai saat aplikasi jalan di Vercel
-# (biar CSV & model ikut ke GitHub dan ikut ke deploy)
-# UCI_Credit_Card.csv
-# artifacts/*.h5
-# artifacts/*.keras
-# artifacts/*.pkl
-# artifacts/*.joblib
-# artifacts/*.onnx
-# artifacts/*.tflite
-# artifacts/*.npy
-# artifacts/*.npz
+# ---- Node (kalau kamu pakai Vercel CLI / frontend tooling) ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Data (opsional) ----
+# Kalau kamu TIDAK mau commit dataset CSV, uncomment baris ini:
+# *.csv
+
+# ---- Model artifacts (PENTING) ----
+# Jangan ignore artifacts/ kalau deploy butuh model & transformer.
+# Kalau kamu mau ignore model besar secara lokal, uncomment ini:
+# artifacts/
+# *.joblib
+# *.keras
+# *.h5
