@@ -1,0 +1,54 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.cache/
+.ipynb_checkpoints/
+
+# --- Virtualenv ---
+venv/
+.venv/
+ENV/
+env/
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+*.log
+
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+
+# --- Vercel ---
+.vercel/
+
+# --- Data & Models (opsional, pilih sesuai kebutuhan) ---
+# dataset besar (kalau gak mau masuk repo)
+UCI_Credit_Card.csv
+
+# file model/artifact besar (kalau sering berubah / ukurannya besar)
+artifacts/*.h5
+artifacts/*.keras
+artifacts/*.pkl
+artifacts/*.joblib
+artifacts/*.onnx
+artifacts/*.tflite
+artifacts/*.npy
+artifacts/*.npz
+
+# kalau mau ignore seluruh artifacts (hanya kalau kamu generate ulang saat build)
+# artifacts/
