@@ -36,19 +36,15 @@ Thumbs.db
 # --- Vercel ---
 .vercel/
 
-# --- Data & Models (opsional, pilih sesuai kebutuhan) ---
-# dataset besar (kalau gak mau masuk repo)
-UCI_Credit_Card.csv
-
-# file model/artifact besar (kalau sering berubah / ukurannya besar)
-artifacts/*.h5
-artifacts/*.keras
-artifacts/*.pkl
-artifacts/*.joblib
-artifacts/*.onnx
-artifacts/*.tflite
-artifacts/*.npy
-artifacts/*.npz
-
-# kalau mau ignore seluruh artifacts (hanya kalau kamu generate ulang saat build)
-# artifacts/
+# --- Data & Models ---
+# JANGAN di-ignore kalau dipakai saat aplikasi jalan di Vercel
+# (biar CSV & model ikut ke GitHub dan ikut ke deploy)
+# UCI_Credit_Card.csv
+# artifacts/*.h5
+# artifacts/*.keras
+# artifacts/*.pkl
+# artifacts/*.joblib
+# artifacts/*.onnx
+# artifacts/*.tflite
+# artifacts/*.npy
+# artifacts/*.npz
